@@ -1,0 +1,220 @@
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import styled from "styled-components";
+
+import imgPort from "../img/Portf.png";
+
+const variants = {
+  open: {
+    opacity: 1,
+    maxHeight: "250px",
+    overflow: "hidden",
+  },
+  close: {
+    pointerEvents: "none",
+    maxHeight: "0px",
+    opacity: 0,
+    overflow: "hidden",
+  },
+};
+
+const Projects = ({ theme }) => {
+  const [hoverCard, setHoverCard] = useState("");
+
+  return (
+    <>
+      <ContainerProjects id="projects">
+        <h2>
+          Portfolio
+          <div className="title-line" />
+        </h2>
+        <p>Showcasing some of my best work</p>
+        <ContainerCards>
+          <div
+            className="container-card"
+            onMouseLeave={() => setHoverCard("")}
+            onMouseEnter={() => setHoverCard("1")}
+          >
+            <motion.img
+              animate={hoverCard === "1" ? { scale: 1.13 } : { scale: 1 }}
+              transition={{ duration: 0.6 }}
+              src={imgPort}
+              alt=""
+            />
+            <motion.div
+              animate={hoverCard === "1" ? "open" : "close"}
+              transition={{ duration: 0.6 }}
+              variants={variants}
+              className="hover-card"
+            >
+              <h4 className="subtitle-projects__card">Title #1</h4>
+              <p>Descripcion de la pagina</p>
+              <div className="container-button__card">
+                <button>View Page</button>
+                <button>Repositorie</button>
+              </div>
+            </motion.div>
+          </div>
+          <div
+            className="container-card"
+            onMouseLeave={() => setHoverCard("")}
+            onMouseEnter={() => setHoverCard("2")}
+          >
+            <motion.img
+              animate={hoverCard === "2" ? { scale: 1.13 } : { scale: 1 }}
+              transition={{ duration: 0.6 }}
+              src="https://picsum.photos/300/200?random"
+              alt=""
+            />
+            <motion.div
+              animate={hoverCard === "2" ? "open" : "close"}
+              transition={{ duration: 0.6 }}
+              variants={variants}
+              className="hover-card"
+            >
+              <h4 className="subtitle-projects__card">AlinDesign - Store</h4>
+              <p>Handmade creative design e-commerce</p>
+              <div className="container-button__card">
+                <button>View Page</button>
+                <button>Repositorie</button>
+              </div>
+            </motion.div>
+          </div>
+          <div
+            className="container-card"
+            onMouseLeave={() => setHoverCard("")}
+            onMouseEnter={() => setHoverCard("3")}
+          >
+            <motion.img
+              animate={hoverCard === "3" ? { scale: 1.13 } : { scale: 1 }}
+              transition={{ duration: 0.6 }}
+              src="https://picsum.photos/300/200?random"
+              alt=""
+            />
+            <motion.div
+              animate={hoverCard === "3" ? "open" : "close"}
+              transition={{ duration: 0.6 }}
+              variants={variants}
+              className="hover-card"
+            >
+              <h4 className="subtitle-projects__card">Title #1</h4>
+              <p>Descripcion de la pagina</p>
+              <div className="container-button__card">
+                <button>View Page</button>
+                <button>Repositorie</button>
+              </div>
+            </motion.div>
+          </div>
+        </ContainerCards>
+        <p>See more . . .</p>
+      </ContainerProjects>
+    </>
+  );
+};
+
+export default Projects;
+
+const ContainerProjects = styled.div`
+  margin: 30px auto 0;
+  padding-top: 40px;
+  h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 23px;
+    text-align: center;
+  }
+  p {
+    text-align: center;
+    color: #acacac;
+    font-size: 17px;
+  }
+`;
+
+const ContainerCards = styled.div`
+  width: 95%;
+  margin: 20px auto;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  .container-card {
+    margin: 0 auto;
+    position: relative;
+    margin: 8px;
+    width: 440px;
+    height: 220px;
+    overflow: hidden;
+    @media (max-width: 1024px) {
+      width: 360px;
+      height: 170px;
+    }
+    @media (max-width: 803px) {
+      width: 320px;
+      height: 160px;
+    }
+    @media (max-width: 716px) {
+      width: 260px;
+      height: 140px;
+    }
+    @media (max-width: 580px) {
+      width: 360px;
+      height: 180px;
+    }
+    @media (max-width: 340px) {
+      width: 240px;
+      height: 130px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    p {
+      color: #e1e1e1;
+    }
+    .hover-card {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #0000007a;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      padding-bottom: 20px;
+      h4,
+      p {
+        text-align: center;
+        @media (max-width: 340px) {
+          font-size: 13px;
+        }
+      }
+      .container-button__card {
+        display: flex;
+        margin-top: 20px;
+        @media (max-width: 340px) {
+        margin-top: 10px;
+          }
+        button {
+          margin: 0 25px;
+          cursor: pointer;
+          border: none;
+          padding: 2px 10px;
+          background-color: #61dafb;
+          text-transform: uppercase;
+          font-size: 14px;
+          font-weight: 500;
+          @media (max-width: 340px) {
+            font-size: 12px;
+            padding: 4px 8px;
+            line-height: 1;
+            margin: 0 18px;
+          }
+        }
+      }
+    }
+  }
+`;

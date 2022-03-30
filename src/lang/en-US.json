@@ -1,0 +1,13 @@
+{
+  "app.helloworld": "Hello World!" ,
+  "app.i`m": "I`m Moisés Zambrano",
+  "app.developer": "Frontend Web Developer Junior specialized in",
+  "app.and": "and",
+  "app.about-me-title": "About",
+  "app.lang-select-spanish": "Spanish",
+  "app.lang-select-english": "English",
+  "nav.about": "About",
+  "nav.projects": "Projects",
+  "nav.contact": "Contact",
+  "nav.services": "Services"
+}
