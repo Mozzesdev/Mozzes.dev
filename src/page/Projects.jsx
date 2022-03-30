@@ -26,10 +26,15 @@ const Projects = ({ theme }) => {
     <>
       <ContainerProjects id="projects">
         <h2>
-          Portfolio
+          <FormattedMessage id="projects.title" defaultMessage="Projects" />
           <div className="title-line" />
         </h2>
-        <p>Showcasing some of my best work</p>
+        <p>
+          <FormattedMessage
+            id="projects.subtitle"
+            defaultMessage="Showcasing some of my best work"
+          />
+        </p>
         <ContainerCards>
           <div
             className="container-card"

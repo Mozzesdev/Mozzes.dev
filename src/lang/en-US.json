@@ -1,5 +1,5 @@
 {
-  "app.helloworld": "Hello World!" ,
+  "app.helloworld": "Hello World!",
   "app.i`m": "I`m Moisés Zambrano",
   "app.developer": "Frontend Web Developer Junior specialized in",
   "app.and": "and",
@@ -14,8 +14,16 @@
   "about.description": "I am Moises Zambrano, a person passionate about technology and Web development.",
   "about.description2": "I am a systems engineering student, I started building web pages since the end of 2021, compiling and learning the latest trends and technologies that support this branch, I am focused on turning ideas into fully functional projects",
   "about.download": "Download",
+  "about.subttile2": "My skills",
   "services.title": "Services",
   "services.subtitle": "Services I offer to my clients",
   "services.responsive": "Fully Responsive",
-  "projects.title": "Showcasing some of my best work"
+  "services.creative": "Creative Design",
+  "services.development": "Development",
+  "services.social": "Social Media Integration",
+  "services.performance": "Performance",
+  "projects.title": "Projects",
+  "projects.subtitle": "Showcasing some of my best work.",
+  "contact.title": "Contact",
+  "contact.subtitle": "I am always available for any job, write me whenever you want."
 }

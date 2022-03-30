@@ -14,8 +14,16 @@
   "about.description": "Soy Moises Zambrano, una persona apasionada por la tecnología y el desarrollo Web.",
   "about.description2": "Soy estudiante de ingeniería en sistemas, comencé a construir páginas web desde finales del 2021, recopilando y aprendiendo las últimas tendencias y tecnologías que dan soporte a esta rama, estoy enfocado en convertir ideas en proyectos totalmente funcionales.",
   "about.download": "Descargar",
+  "about.subttile2": "Mis habilidades",
   "services.title": "Servicios",
   "services.subtitle": "Servicios que ofrezco a mis clientes.",
-  "services.responsive": "Completamente Responsive",
-  "projects.title": "Algunos de mis mejores trabajos."
+  "services.responsive": "Completamente responsive",
+  "services.creative": "Diseño creativo",
+  "services.development": "Desarrollo",
+  "services.social": "Integración de redes sociales",
+  "services.performance": "Rendimiento",
+  "projects.title": "Proyectos",
+  "projects.subtitle": "Algunos de mis mejores trabajos.",
+  "contact.title": "Contacto",
+  "contact.subtitle": "Siempre estoy disponible para cualquier trabajo, escríbeme cuando quieras."
 }

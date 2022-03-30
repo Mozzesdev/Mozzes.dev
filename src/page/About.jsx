@@ -45,25 +45,42 @@ const About = ({ theme }) => {
         </h2>
         <AboutContainer>
           <div className="container-about__details">
-            <h3 className="subtitle-about">Who I am?</h3>
+            <h3 className="subtitle-about">
+              <FormattedMessage
+                id="about.subtitle"
+                defaultMessage="Who I am?"
+              />
+            </h3>
             <p className="p-subtitle">
-              I am Moises Zambrano, a person passionate about technology <br />{" "}
-              and Web development.
+              <FormattedMessage
+                id="about.description"
+                defaultMessage="I am Moises Zambrano, a person passionate about technology and Web development."
+              />
             </p>
             <p className="p-subtitle-2">
-              I am a systems engineering student, I started building web pages
-              since the end of 2021, compiling and learning the latest trends
-              and technologies that support this branch, I am focused on turning
-              ideas into fully functional projects
+              <FormattedMessage
+                id="about.description2"
+                defaultMessage="I am a systems engineering student, I started building web pages since the end of 2021, compiling and learning the latest trends and technologies that support this branch, I am focused on turning ideas into fully functional projects"
+              />
             </p>
             <a href="/cv" target="_blank">
               <button className="cv-download">
-                <img src={docIcon} alt="" /> Download CV
+                <img src={docIcon} alt="" />{" "}
+                <FormattedMessage
+                  id="about.download"
+                  defaultMessage="Download"
+                />{" "}
+                CV
               </button>
             </a>
           </div>
           <div>
-            <h3 className="subtitle2-about">My Skills</h3>
+            <h3 className="subtitle2-about">
+              <FormattedMessage
+                id="about.subttile2"
+                defaultMessage="My Skills"
+              />
+            </h3>
             <div className="icons-container__about">
               <div>
                 <motion.img

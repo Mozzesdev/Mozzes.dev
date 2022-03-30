@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { FormattedMessage } from "react-intl";
 
 import AOS from "aos";
 AOS.init();
@@ -12,10 +13,15 @@ const Services = () => {
     <>
       <ContainerServices id="services">
         <h2>
-          Services
+          <FormattedMessage id="services.title" defaultMessage="Services" />
           <div className="title-line" />
         </h2>
-        <p className="subtitle-services">Services i offer to my clients</p>
+        <p className="subtitle-services">
+          <FormattedMessage
+            id="services.subtitle"
+            defaultMessage="Services I offer to my clients"
+          />
+        </p>
         <ContainerAllServices>
           <div
             className="container-div__services"
@@ -34,7 +40,12 @@ const Services = () => {
               <path d="M20 3H7c-1.103 0-2 .897-2 2v2H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h6c1.103 0 2-.897 2-2h8c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zM9.997 19H4V9h6l-.003 10zm10-2H12V9c0-1.103-.897-2-2-2H7V5h13l-.003 12z"></path>
             </motion.svg>
             <div>
-              <h4 className="subtitle-services__card">Fully Responsive</h4>
+              <h4 className="subtitle-services__card">
+                <FormattedMessage
+                  id="services.responsive"
+                  defaultMessage="Fully Responsive"
+                />
+              </h4>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
                 esse, aperiam eos beatae quam voluptatem perferendis amet
@@ -48,7 +59,7 @@ const Services = () => {
             onMouseEnter={() => setHoverCard("pen")}
           >
             <motion.svg
-              initial={{ width: 24, height: 24, }}
+              initial={{ width: 24, height: 24 }}
               transition={{ duration: 0.4 }}
               animate={
                 hoverCard === "pen" ? { fill: "#efd81d" } : { fill: "#747474" }
@@ -57,7 +68,12 @@ const Services = () => {
               <path d="M18.404 2.998c-.757-.754-2.077-.751-2.828.005l-1.784 1.791L11.586 7H7a.998.998 0 0 0-.939.658l-4 11c-.133.365-.042.774.232 1.049l2 2a.997.997 0 0 0 1.049.232l11-4A.998.998 0 0 0 17 17v-4.586l2.207-2.207v-.001h.001L21 8.409c.378-.378.586-.881.585-1.415 0-.535-.209-1.038-.588-1.415l-2.593-2.581zm-3.111 8.295A.996.996 0 0 0 15 12v4.3l-9.249 3.363 4.671-4.671c.026.001.052.008.078.008A1.5 1.5 0 1 0 9 13.5c0 .026.007.052.008.078l-4.671 4.671L7.7 9H12c.266 0 .52-.105.707-.293L14.5 6.914 17.086 9.5l-1.793 1.793zm3.206-3.208-2.586-2.586 1.079-1.084 2.593 2.581-1.086 1.089z"></path>
             </motion.svg>
             <div>
-              <h4 className="subtitle-services__card">Creative Design</h4>
+              <h4 className="subtitle-services__card">
+                <FormattedMessage
+                  id="services.creative"
+                  defaultMessage="Creative Design"
+                />
+              </h4>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
                 esse, aperiam eos beatae quam voluptatem perferendis amet
@@ -80,7 +96,12 @@ const Services = () => {
               <path d="m7.375 16.781 1.25-1.562L4.601 12l4.024-3.219-1.25-1.562-5 4a1 1 0 0 0 0 1.562l5 4zm9.25-9.562-1.25 1.562L19.399 12l-4.024 3.219 1.25 1.562 5-4a1 1 0 0 0 0-1.562l-5-4zm-1.649-4.003-4 18-1.953-.434 4-18z"></path>
             </motion.svg>
             <div>
-              <h4 className="subtitle-services__card">Development</h4>
+              <h4 className="subtitle-services__card">
+                <FormattedMessage
+                  id="services.development"
+                  defaultMessage="Development"
+                />
+              </h4>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
                 esse, aperiam eos beatae quam voluptatem perferendis amet
@@ -104,7 +125,10 @@ const Services = () => {
             </motion.svg>
             <div>
               <h4 className="subtitle-services__card">
-                Social Media Integration
+                <FormattedMessage
+                  id="services.social"
+                  defaultMessage="Social Media Integration"
+                />
               </h4>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
@@ -131,7 +155,12 @@ const Services = () => {
               <path d="M10.939 12.939a1.53 1.53 0 0 0 0 2.561 1.53 1.53 0 0 0 2.121-.44l3.962-6.038a.034.034 0 0 0 0-.035.033.033 0 0 0-.045-.01l-6.038 3.962z"></path>
             </motion.svg>
             <div>
-              <h4 className="subtitle-services__card">Performance</h4>
+              <h4 className="subtitle-services__card">
+                <FormattedMessage
+                  id="services.performance"
+                  defaultMessage="Performance"
+                />
+              </h4>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
                 esse, aperiam eos beatae quam voluptatem perferendis amet
@@ -230,7 +259,7 @@ const ContainerAllServices = styled.div`
     }
     @media (max-width: 890px) {
       width: 330px;
-      svg{
+      svg {
         transform: scale(1.1);
       }
     }

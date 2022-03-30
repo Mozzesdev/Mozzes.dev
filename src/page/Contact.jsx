@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { FormattedMessage } from "react-intl";
 
 const Contact = () => {
   const [hoverCard, setHoverCard] = useState("");
   return (
     <ContainerSectionContact id="contact">
-      <h2>Contact</h2>
+      <h2>
+        <FormattedMessage id="contact.title" defaultMessage="Contact" />
+      </h2>
       <div className="title-line" />
-      <p>I am always available for any job, answer me whenever you want</p>
+      <p>
+        <FormattedMessage id="contact.subtitle" defaultMessage="I am always available for any job, write me whenever you want." />
+      </p>
       <ContainerCards>
         <div
           onMouseLeave={() => setHoverCard("")}
