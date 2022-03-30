@@ -50,8 +50,19 @@ const Projects = ({ theme }) => {
               <h4 className="subtitle-projects__card">Title #1</h4>
               <p>Descripcion de la pagina</p>
               <div className="container-button__card">
-                <button>View Page</button>
-                <button>Repositorie</button>
+                <button>
+                  <a href="https://mozzes-dev.netlify.app/" target="_blank">
+                    View page
+                  </a>
+                </button>
+                <button>
+                  <a
+                    href="https://github.com/WinFlix/Mozzes.dev"
+                    target="_blank"
+                  >
+                    Repositorie
+                  </a>
+                </button>
               </div>
             </motion.div>
           </div>
@@ -196,8 +207,8 @@ const ContainerCards = styled.div`
         display: flex;
         margin-top: 20px;
         @media (max-width: 340px) {
-        margin-top: 10px;
-          }
+          margin-top: 10px;
+        }
         button {
           margin: 0 25px;
           cursor: pointer;
