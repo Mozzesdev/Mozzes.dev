@@ -37,6 +37,7 @@ const NavResponsive = ({
           onClick={() => {
             cambiarEstado(!estado);
             setLanguage(!language)
+            disableScroll.off();
           }}
         >
           <motion.div
@@ -151,11 +152,13 @@ const Overlay = styled.div`
   .container-nav__responsive {
     width: 0%;
     height: 100%;
+    max-height: 100%;
     padding: 10% 0;
     margin: 0 0 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow-y: scroll;
   }
 `;
 
@@ -167,7 +170,6 @@ const ContainerLinks = styled.div`
   justify-content: space-evenly;
   align-items: center;
   margin-top: 35px;
-  overflow-y: scroll;
   a {
     font-size: 18px;
     padding: 10px 20px;
