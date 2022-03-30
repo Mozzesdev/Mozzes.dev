@@ -70,7 +70,7 @@ a {
   margin: 15px 0;
   border: none;
   background-color: #fde52b;
-  transition: 0.3s all;
+  transition: 0.3s all ease;
 }
 @media (max-width: 582px) {
   .cv-download{
