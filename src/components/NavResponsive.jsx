@@ -164,7 +164,7 @@ const ContainerLinks = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 35px;
   a {
     font-size: 18px;
     padding: 10px 20px;
@@ -176,7 +176,7 @@ const ContainerLinks = styled.div`
       transition: 0.3s all;
     }
     @media (max-width: 508px) {
-      font-size: 25px;
+      font-size: 21px;
     }
   }
 `;
@@ -209,7 +209,7 @@ const ContainerIcons = styled.div`
 const ContainerLanguage = styled.div`
   display: flex;
   align-items: center;
-  margin: 10px 0 50px 0;
+  margin: 10px 0 80px 0;
   width: 90%;
   justify-content: space-between;
   cursor: pointer;

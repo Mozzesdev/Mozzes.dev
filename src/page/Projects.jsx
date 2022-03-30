@@ -123,7 +123,6 @@ const Projects = ({ theme }) => {
             </motion.div>
           </div>
         </ContainerCards>
-        <p>See more . . .</p>
       </ContainerProjects>
     </>
   );
