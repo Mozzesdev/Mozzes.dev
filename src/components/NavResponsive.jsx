@@ -191,17 +191,17 @@ const ContainerIcons = styled.div`
   .modes-responsive {
     display: flex;
     justify-content: space-evenly;
-    padding: 4px 7px;
+    padding: 5px 8px;
     cursor: pointer;
     border-radius: 12px;
     .sun {
-      width: 27px;
-      height: 27px;
+      width: 25px;
+      height: 25px;
       margin: 0 15px 0 0;
     }
     .moon {
-      width: 25px;
-      height: 25px;
+      width: 23px;
+      height: 23px;
     }
   }
 `;
@@ -247,14 +247,14 @@ const ContainerLanguage = styled.div`
         background-color: #e1e1e1;
       }
       p {
-        font-size: 14px;
+        font-size: 12px;
         transition: 0.5 all;
         letter-spacing: normal;
       }
       img {
         object-fit: cover;
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
         border-radius: 50%;
       }
     }

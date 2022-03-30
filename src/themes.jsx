@@ -75,8 +75,8 @@ export const GlobalStyles = createGlobalStyle`
   .modes-responsive::after{
     content: "";
     display: block;
-    width: 39px;
-    height: 39px;
+    width: 40px;
+    height: 40px;
     position: absolute;
     background: #F1F1F1;
     top: ${(props) => props.theme.top};

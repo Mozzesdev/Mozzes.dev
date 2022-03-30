@@ -156,6 +156,7 @@ const NavBar = ({ themeToggler, theme }) => {
           <ContainerMenuResponsive
             onClick={() => {
               setNavbarResponsive(!navbarResponsive);
+              setLanguage(false)
               disableScroll.on();
             }}
           >
