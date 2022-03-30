@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-import imgPort from "../img/Portf.png";
+import imgPort from "../img/Portf.webp";
 
 const variants = {
   open: {
@@ -47,8 +47,8 @@ const Projects = ({ theme }) => {
               variants={variants}
               className="hover-card"
             >
-              <h4 className="subtitle-projects__card">Title #1</h4>
-              <p>Descripcion de la pagina</p>
+              <h4 className="subtitle-projects__card">Mozzes.dev</h4>
+              <p>My Portfolio</p>
               <div className="container-button__card">
                 <button>
                   <a href="https://mozzes-dev.netlify.app/" target="_blank">

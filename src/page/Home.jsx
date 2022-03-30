@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useEffect } from "react";
-import lol from "../img/Lol.png";
-import lolDark from "../img/LolDark.png";
+import lol from "../img/Lol.webp";
+import lolDark from "../img/LolDark.webp";
 import linkdIcon from "../icons/linkd.svg";
 import linkdnw from "../icons/linkdnw.svg";
 import github from "../icons/github.svg";
