@@ -37,7 +37,6 @@ const NavResponsive = ({
           onClick={() => {
             cambiarEstado(!estado);
             setLanguage(!language)
-            disableScroll.off();
           }}
         >
           <motion.div
@@ -167,6 +166,8 @@ const ContainerLinks = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  margin-top: 35px;
+  overflow-y: scroll;
   a {
     font-size: 18px;
     padding: 10px 20px;
@@ -211,7 +212,7 @@ const ContainerIcons = styled.div`
 const ContainerLanguage = styled.div`
   display: flex;
   align-items: center;
-  margin: 10px 0 0 0;
+  margin: 10px 0 60px 0;
   width: 90%;
   justify-content: space-between;
   cursor: pointer;

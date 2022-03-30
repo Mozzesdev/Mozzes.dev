@@ -155,7 +155,6 @@ const NavBar = ({ themeToggler, theme }) => {
             onClick={() => {
               setNavbarResponsive(!navbarResponsive);
               setLanguage(false)
-              disableScroll.on();
             }}
           >
             <motion.svg
