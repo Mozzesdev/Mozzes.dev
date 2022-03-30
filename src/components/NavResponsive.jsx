@@ -152,6 +152,7 @@ const Overlay = styled.div`
   .container-nav__responsive {
     width: 0%;
     height: 100%;
+    padding: 10% 0;
     margin: 0 0 0 auto;
     display: flex;
     flex-direction: column;
@@ -166,7 +167,6 @@ const ContainerLinks = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 35px;
   a {
     font-size: 18px;
     padding: 10px 20px;
@@ -211,7 +211,7 @@ const ContainerIcons = styled.div`
 const ContainerLanguage = styled.div`
   display: flex;
   align-items: center;
-  margin: 10px 0 80px 0;
+  margin: 10px 0 0 0;
   width: 90%;
   justify-content: space-between;
   cursor: pointer;
