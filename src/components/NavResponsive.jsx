@@ -153,7 +153,6 @@ const Overlay = styled.div`
     width: 0%;
     height: 100%;
     max-height: 100%;
-    padding: 10% 0;
     margin: 0 0 0 auto;
     display: flex;
     flex-direction: column;
