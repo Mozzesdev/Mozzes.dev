@@ -176,7 +176,7 @@ const ContainerLinks = styled.div`
       transition: 0.3s all;
     }
     @media (max-width: 508px) {
-      font-size: 21px;
+      font-size: 20px;
     }
   }
 `;
@@ -245,11 +245,6 @@ const ContainerLanguage = styled.div`
       gap: 10px;
       :hover {
         background-color: #e1e1e1;
-      }
-      p {
-        font-size: 12px;
-        transition: 0.5 all;
-        letter-spacing: normal;
       }
       img {
         object-fit: cover;

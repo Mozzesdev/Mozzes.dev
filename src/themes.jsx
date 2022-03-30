@@ -118,15 +118,15 @@ export const GlobalStyles = createGlobalStyle`
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 5px 15px;
+      padding: 3px 18px;
       margin: 10px 0;
       cursor: pointer;
       p{
-        font-size: 20px;
+        font-size: 17px;
       }
       img{
-        width: 35px;
-        height: 35px;
+        width: 32px;
+        height: 32px;
         border-radius: 50%;
         object-fit: cover;
       }
