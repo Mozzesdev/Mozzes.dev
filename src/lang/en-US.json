@@ -9,5 +9,13 @@
   "nav.about": "About",
   "nav.projects": "Projects",
   "nav.contact": "Contact",
-  "nav.services": "Services"
+  "nav.services": "Services",
+  "about.subtitle": "Who I am?",
+  "about.description": "I am Moises Zambrano, a person passionate about technology and Web development.",
+  "about.description2": "I am a systems engineering student, I started building web pages since the end of 2021, compiling and learning the latest trends and technologies that support this branch, I am focused on turning ideas into fully functional projects",
+  "about.download": "Download",
+  "services.title": "Services",
+  "services.subtitle": "Services I offer to my clients",
+  "services.responsive": "Fully Responsive",
+  "projects.title": "Showcasing some of my best work"
 }

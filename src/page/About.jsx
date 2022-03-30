@@ -249,11 +249,13 @@ const AboutContainer = styled.div`
   @media (max-width: 960px) {
     flex-direction: column;
   }
+  a {
+    width: 159px;
+  }
   .container-about__details {
     display: flex;
     flex-direction: column;
     position: relative;
-
     .p-subtitle {
       font-size: 23px;
       line-height: 1.3;

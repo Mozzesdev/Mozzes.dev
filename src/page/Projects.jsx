@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { FormattedMessage } from "react-intl";
 
 import imgPort from "../img/Portf.webp";
 
