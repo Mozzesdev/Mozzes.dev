@@ -147,6 +147,8 @@ const Overlay = styled.div`
   position: fixed;
   background-color: #1a1a1ac9;
   z-index: 20;
+  top: 0;
+  left: 0;
   .container-nav__responsive {
     width: 0%;
     height: 100%;

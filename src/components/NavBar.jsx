@@ -52,10 +52,9 @@ const NavBar = ({ themeToggler, theme }) => {
         setLanguage={setLanguage}
       />
       <motion.div
-        className="container-nav"
         initial={{width: '100%'}}
         animate={
-          scrollNav === true && navbarResponsive === false
+          scrollNav === true
             ? {
                 position: "fixed",
                 width: "100%",
@@ -63,7 +62,6 @@ const NavBar = ({ themeToggler, theme }) => {
                 height: ["0%", "100%"],
                 boxShadow: "1px 3px 20px rgba(51, 51, 51, 0.138)",
                 top: 0,
-                left: 0,
                 zIndex: 2,
               }
             : {
