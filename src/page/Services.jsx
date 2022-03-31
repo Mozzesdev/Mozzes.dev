@@ -207,9 +207,12 @@ const Services = () => {
 export default Services;
 
 const ContainerServices = styled.div`
-  width: 95%;
+  width: 88%;
   margin: 30px auto 0;
   padding-top: 40px;
+  @media (max-width: 1040px) {
+    width: 90%;
+  }
   h2 {
     text-align: center;
     display: flex;
@@ -229,8 +232,6 @@ const ContainerAllServices = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   text-align: center;
-  justify-content: center;
-  align-items: center;
   margin-top: 10px;
   @media (max-width: 742px) {
     grid-template-columns: repeat(2, 1fr);
