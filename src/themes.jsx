@@ -30,7 +30,7 @@ export const darkTheme = {
 export const GlobalStyles = createGlobalStyle`
   body{
    background-color: ${(props) => props.theme.body};
-   transition: .7s all;
+   transition: 1s all;
   }
 
   h1,h2,h3,h4,p,a{
@@ -39,24 +39,24 @@ export const GlobalStyles = createGlobalStyle`
 
   .navegacion-principal{
    background-color: ${(props) => props.theme.body};
-   transition: .7s all;
+   transition: 1s all;
   }
   .container-nav{
    background-color: ${(props) => props.theme.body};
    border: ${(props) => props.theme.border};
-   transition: .7s all;
+   transition: 1s all;
   }
   .modes{
    position: relative;
    background-color: ${(props) => props.theme.body};
    border: ${(props) => props.theme.borderModes};
-   transition: .7s all;
+   transition: 1s all;
   }
   .modes-responsive{
    position: relative;
    background-color: ${(props) => props.theme.body};
    border: ${(props) => props.theme.borderModes};
-   transition: .7s all;
+   transition: 1s all;
   }
   .modes::after{
     content: "";
@@ -69,7 +69,7 @@ export const GlobalStyles = createGlobalStyle`
     left: ${(props) => props.theme.left};
     right: unset;
     border-radius: 100px;
-    transition: .3s ease all;
+    transition: 0.4s all linear;
     box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .2);
   }
   .modes-responsive::after{
@@ -83,7 +83,7 @@ export const GlobalStyles = createGlobalStyle`
     left: ${(props) => props.theme.leftResponsive};
     right: unset;
     border-radius: 100px;
-    transition: .6s all;
+    transition: 0.5s all linear;
     box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .2);
   }
   .container-div{
@@ -144,5 +144,8 @@ export const GlobalStyles = createGlobalStyle`
 
   .subtitle-projects__card{
     color: #f1f1f1;
+  }
+  .arrow-down{
+    fill: ${(props) => props.theme.fontColor}; 
   }
 `;

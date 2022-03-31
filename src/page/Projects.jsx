@@ -58,7 +58,10 @@ const Projects = ({ theme }) => {
               <div className="container-button__card">
                 <button>
                   <a href="https://mozzes-dev.netlify.app/" target="_blank">
-                    View page
+                    <FormattedMessage
+                      id="projects.viewpage"
+                      defaultMessage="View page"
+                    />
                   </a>
                 </button>
                 <button>
@@ -66,7 +69,10 @@ const Projects = ({ theme }) => {
                     href="https://github.com/WinFlix/Mozzes.dev"
                     target="_blank"
                   >
-                    Repositorie
+                    <FormattedMessage
+                      id="projects.repositorie"
+                      defaultMessage="Repositorie"
+                    />
                   </a>
                 </button>
               </div>
@@ -92,8 +98,18 @@ const Projects = ({ theme }) => {
               <h4 className="subtitle-projects__card">AlinDesign - Store</h4>
               <p>Handmade creative design e-commerce</p>
               <div className="container-button__card">
-                <button>View Page</button>
-                <button>Repositorie</button>
+                <button>
+                  <FormattedMessage
+                    id="projects.viewpage"
+                    defaultMessage="View page"
+                  />
+                </button>
+                <button>
+                  <FormattedMessage
+                    id="projects.repositorie"
+                    defaultMessage="Repositorie"
+                  />
+                </button>
               </div>
             </motion.div>
           </div>
@@ -117,8 +133,18 @@ const Projects = ({ theme }) => {
               <h4 className="subtitle-projects__card">Title #1</h4>
               <p>Descripcion de la pagina</p>
               <div className="container-button__card">
-                <button>View Page</button>
-                <button>Repositorie</button>
+                <button>
+                  <FormattedMessage
+                    id="projects.viewpage"
+                    defaultMessage="View page"
+                  />
+                </button>
+                <button>
+                  <FormattedMessage
+                    id="projects.repositorie"
+                    defaultMessage="Repositorie"
+                  />
+                </button>
               </div>
             </motion.div>
           </div>
@@ -157,9 +183,11 @@ const ContainerCards = styled.div`
   .container-card {
     margin: 0 auto;
     position: relative;
-    margin: 8px;
+    border-radius: 2px;
+    margin: 10px 13px;
     width: 440px;
     height: 220px;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     @media (max-width: 1024px) {
       width: 360px;
@@ -222,7 +250,11 @@ const ContainerCards = styled.div`
           background-color: #61dafb;
           text-transform: uppercase;
           font-size: 14px;
+          color: #424242;
           font-weight: 500;
+          a{
+            color: #424242;
+          }
           @media (max-width: 340px) {
             font-size: 12px;
             padding: 4px 8px;

@@ -47,9 +47,10 @@ const Services = () => {
                 />
               </h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-                esse, aperiam eos beatae quam voluptatem perferendis amet
-                inventore nobis quidem!
+                <FormattedMessage
+                  id="services.responsive.description"
+                  defaultMessage="Fully responsive design, adaptable to most devices on the market for a better experience."
+                />
               </p>
             </div>
           </div>
@@ -75,9 +76,10 @@ const Services = () => {
                 />
               </h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-                esse, aperiam eos beatae quam voluptatem perferendis amet
-                inventore nobis quidem!
+                <FormattedMessage
+                  id="services.creative.description"
+                  defaultMessage="Creative design, according to the tastes or rules that are established when preparing the project, and focused on UX and UI"
+                />
               </p>
             </div>
           </div>
@@ -103,9 +105,10 @@ const Services = () => {
                 />
               </h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-                esse, aperiam eos beatae quam voluptatem perferendis amet
-                inventore nobis quidem!
+                <FormattedMessage
+                  id="services.development.description"
+                  defaultMessage="Development focused on being sustainable in the long term and focused on technologies with more performance of our time."
+                />
               </p>
             </div>
           </div>
@@ -131,9 +134,10 @@ const Services = () => {
                 />
               </h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-                esse, aperiam eos beatae quam voluptatem perferendis amet
-                inventore nobis quidem!
+                <FormattedMessage
+                  id="services.social.description"
+                  defaultMessage="Integration of social media to highly optimized websites and necessary for organic growth."
+                />
               </p>
             </div>
           </div>
@@ -162,9 +166,10 @@ const Services = () => {
                 />
               </h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-                esse, aperiam eos beatae quam voluptatem perferendis amet
-                inventore nobis quidem!
+                <FormattedMessage
+                  id="services.performance.description"
+                  defaultMessage="Guarantee of a loading speed of the web page from the server to the client, this for a better experience."
+                />
               </p>
             </div>
           </div>
@@ -186,9 +191,10 @@ const Services = () => {
             <div>
               <h4 className="subtitle-services__card">SEO</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-                esse, aperiam eos beatae quam voluptatem perferendis amet
-                inventore nobis quidem!
+                <FormattedMessage
+                  id="services.seo.description"
+                  defaultMessage="Positioning and optimization of the website in the organic results of the different search engines."
+                />
               </p>
             </div>
           </div>
@@ -227,24 +233,25 @@ const ContainerAllServices = styled.div`
   align-items: center;
   margin-top: 10px;
   .container-div__services {
-    width: 370px;
+    width: 340px;
+    height: 190px;
     margin: 10px;
     padding: 22px 20px 13px;
     background-color: #2d2d2d;
     border-bottom: 4px solid transparent;
     transition: 0.4s all;
     h4 {
-      margin-bottom: 13px;
+      margin-bottom: 8px;
       font-size: 18px;
       font-weight: 600;
     }
     svg {
-      margin: 10px 0 5px 0;
+      margin: 7px 0 6px 0;
       transform: scale(1.4);
     }
     p {
       color: #acacac;
-      line-height: 1.3;
+      line-height: 1.2;
       @media (max-width: 789px) {
         font-size: 14px;
       }
@@ -258,20 +265,20 @@ const ContainerAllServices = styled.div`
       transition: 0.4s all;
     }
     @media (max-width: 890px) {
-      width: 330px;
+      width: 320px;
       svg {
         transform: scale(1.1);
       }
     }
     @media (max-width: 789px) {
-      width: 300px;
+      width: 290px;
     }
     @media (max-width: 682px) {
-      width: 260px;
+      width: 250px;
       padding: 18px 16px 9px;
     }
     @media (max-width: 598px) {
-      width: 200px;
+      width: 190px;
       padding: 18px 16px 9px;
     }
   }

@@ -2,10 +2,6 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import { FormattedMessage } from "react-intl";
 
-import sunIcon from "../icons/sun.svg";
-import sunIconWhite from "../icons/sunwhite.svg";
-import moonIcon from "../icons/moon.svg";
-import moonIconWhite from "../icons/moonwhite.svg";
 import LanguageResponsive from "./LanguageResponsive";
 import downArrowIcon from "../icons/downArrow.svg";
 import arrowdown from "../icons/arrowdown.svg";
@@ -36,7 +32,7 @@ const NavResponsive = ({
         <Overlay
           onClick={() => {
             cambiarEstado(!estado);
-            setLanguage(!language)
+            setLanguage(!language);
             disableScroll.off();
           }}
         >
@@ -96,20 +92,31 @@ const NavResponsive = ({
             </ContainerLinks>
             <ContainerIcons>
               <div className="modes-responsive" onClick={themeToggler}>
-                <img
-                  src={theme === "light" ? sunIcon : sunIconWhite}
-                  alt=""
+                <motion.svg
                   className="sun"
-                  onClick={themeToggler}
-                />
-                <img
-                  src={theme === "light" ? moonIcon : moonIconWhite}
-                  alt=""
-                  onClick={themeToggler}
+                  animate={
+                    theme === "light"
+                      ? { fill: "#424242" }
+                      : { fill: "#f1f1f1" }
+                  }
+                >
+                  <path d="M6.995 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007-2.246-5.007-5.007-5.007S6.995 9.239 6.995 12zM11 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2H2zm17 0h3v2h-3zM5.637 19.778l-1.414-1.414 2.121-2.121 1.414 1.414zM16.242 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.344 7.759 4.223 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z"></path>
+                </motion.svg>
+                <motion.svg
                   className="moon"
-                />
+                  animate={
+                    theme === "light"
+                      ? { fill: "#000000" }
+                      : { fill: "#f1f1f1" }
+                  }
+                >
+                  <path d="M12 11.807A9.002 9.002 0 0 1 10.049 2a9.942 9.942 0 0 0-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142 3.906 3.906 10.237 3.905 14.143 0a9.946 9.946 0 0 0 2.735-5.119A9.003 9.003 0 0 1 12 11.807z"></path>
+                </motion.svg>
               </div>
-              <LanguageResponsive language={language} setLanguage={setLanguage} />
+              <LanguageResponsive
+                language={language}
+                setLanguage={setLanguage}
+              />
               <ContainerLanguage
                 className="language-btn"
                 onClick={() => setLanguage(!language)}
@@ -152,7 +159,6 @@ const Overlay = styled.div`
   .container-nav__responsive {
     width: 0%;
     height: 100%;
-    max-height: 100%;
     margin: 0 0 0 auto;
     display: flex;
     flex-direction: column;
@@ -168,7 +174,7 @@ const ContainerLinks = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 35px;
+  margin-top: 25px;
   a {
     font-size: 18px;
     padding: 10px 20px;
@@ -199,13 +205,13 @@ const ContainerIcons = styled.div`
     cursor: pointer;
     border-radius: 12px;
     .sun {
-      width: 25px;
-      height: 25px;
+      width: 24px;
+      height: 24px;
       margin: 0 15px 0 0;
     }
     .moon {
-      width: 23px;
-      height: 23px;
+      width: 24px;
+      height: 24px;
     }
   }
 `;

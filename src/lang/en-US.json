@@ -1,6 +1,6 @@
 {
   "app.helloworld": "Hello World!",
-  "app.i`m": "I`m Moisés Zambrano",
+  "app.i`m": "I`m Moises Zambrano",
   "app.developer": "Frontend Web Developer Junior specialized in",
   "app.and": "and",
   "app.about-me-title": "About",
@@ -18,12 +18,20 @@
   "services.title": "Services",
   "services.subtitle": "Services I offer to my clients",
   "services.responsive": "Fully Responsive",
+  "services.responsive.description": "Fully responsive design, adaptable to most devices on the market for a better experience of all users.",
   "services.creative": "Creative Design",
+  "services.creative.description": "Creative design, according to the tastes or rules that are established when preparing the project, and focused on UX and UI.",
   "services.development": "Development",
+  "services.development.description": "Development focused on being sustainable in the long term and focused on technologies with more performance of our time.",
   "services.social": "Social Media Integration",
+  "services.social.description": "Integration of social media to highly optimized websites and necessary for organic growth.",
   "services.performance": "Performance",
+  "services.performance.description": "Guarantee of a loading speed of the web page from the server to the client, this for a better experience.",
+  "services.seo.description": "Positioning and optimization of the website in the organic results of the different search engines.",
   "projects.title": "Projects",
   "projects.subtitle": "Showcasing some of my best work.",
+  "projects.viewpage": "View page",
+  "projects.repositorie": "Repositorie",
   "contact.title": "Contact",
   "contact.subtitle": "I am always available for any job, write me whenever you want."
 }
