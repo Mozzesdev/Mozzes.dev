@@ -372,7 +372,7 @@ const ContainerAllServices = styled.div`
         line-height: 1.2;
       }
       p {
-        font-size: 11px;
+        font-size: 12px;
       }
     }
     @media (max-width: 340px) {
