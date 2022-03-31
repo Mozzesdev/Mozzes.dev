@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useEffect } from "react";
 import lol from "../img/Lol.webp";
 import lolDark from "../img/LolDark.webp";
+import reactColor from '../icons/react.color.svg'
 import linkdIcon from "../icons/linkd.svg";
 import linkdnw from "../icons/linkdnw.svg";
 import github from "../icons/github.svg";
@@ -37,9 +38,9 @@ const Home = ({ theme, themeToggler }) => {
           data-aos-duration="1000"
         >
           {theme === "light" ? (
-            <img src={lol} className="me-home" alt="" />
+            <img src={lol} className="me-home" alt="me-img" />
           ) : (
-            <img src={lolDark} className="me-home" alt="" />
+            <img src={lolDark} className="me-home" alt="me-img" />
           )}
         </HeaderImg>
         <TextHeader
@@ -74,7 +75,8 @@ const Home = ({ theme, themeToggler }) => {
               <motion.img
                 animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAA/JJREFUSEt9Vj2MG0UU/t5s8O5eijgdQkj48PqgoLgCKbJ9SL4IQYUwtGmMiBAdRimgIndKAwXE6RAKigvSUIApkRBnifNageaQaLjd+6kQHQ7SxbvWeR5649273bPNVPbMvJ/vve99s0QAGPPrfD/5teCi2Zrbz2/Iv2RlD+YvLUoim1Y2IQKfJU3LEri6c1SM7NPb4oQJP0TVSj/r0BkGDWK8CQLs6NL2483V0TwayPEFDElE1w/7TOgCfExMbYljx9Y7cjt2pg/AIBB3mKlEQGtc8xrG2wWo8wgAOMPDElh3IzHCLAvbD1tgugVicf1FVPW6aWquf9B3YtX85/rqaC7Aoh5cHuyvT0l1orrXEAMJcMWUTP9GYLIj6+XR9edHabqC1iAw60L/lrHIGCUBxMz1wx4TesYFozmuec3UdmGADPnyHE245wyCv4joM0CXAHobgAIQJpc9gDSgvwOpY2j+aFz3nlmIIFui4s5hMXL0B8TcYuCKAr5lhT6m2LYn1rXR5qwsxZ2jYlzQj2DxbUzRBOE1AP8y0QMnUvcMozLkN2W7vLu/rkFdAnqFidWZ2Fpq2mSgxMRbQlPHDz4WgON65VPHDxpgaitgBLGJrf7kqdM2E5oEbj2pr+2lHTGx3EGwp8Ctk+RA9pzdICSl/h7XyhuOH9wnqHcFARN/HVUrN10/3GXmp6N6xUv7YQgC6kb1yroJcNaoQbAnmzNoBJlGZxiGYP1oXFu74Q7CX0DYMMeM3XHde8X1g4cAXRvXKl52AFw/PB7XvFIOwcpgfwtQzxUm1oejzdWRMzwqEU+/AfCsHVvrceH0VRB9ZerJ+j17Yv0UFaZ9gCwo642ounosvZkUpneZ6PdxrdzJITAlGYYtYmwB/D0YNhP9ajAyr0c1T6b5jCjuIOwwYY9ARWi9xoSYQG8xYSuuet1UNnJSkdqv+AdNDf6SGBMQDkB4CZp/ZKUCYzDVFVj0Ohh/QKMMhYIC3j+pez0RLiN26RzMyXIS5byOBGe4f4NAnxPTTbmvwfeZ+FZcrTyUnp3dXSLp+UFLmuz6QWb8gRU/bAK4o0GsiD95Uq30TGNJGHjQj2rlxizrBEFuDrIhCBCOE9PWTCpmaRV/PirGzvTPRFVflKFLS+EOwr4I4/ybIcGWLJkLe3KpMWOUBFR3mfieYYbmtsyMDJOIYFw47Wcpfk7ZXIA8NMMozW0QSWKPldbtk40X9sRYhkmT1RE5IXCRibajajmR76VP5jwU4bU4nGnQxUW4unNYZAZG8g6kU5XI+1k/Fj/ciaovaNqykmYDXAyWt1lCtaWPfkb3U5nJykbuqyL7NXAedfnXxv+iSQ7/A1PK6CutFAmLAAAAAElFTkSuQmCC"
+                alt='react-icon'
+                src={reactColor}
               />
             </span>
           </p>
@@ -87,7 +89,7 @@ const Home = ({ theme, themeToggler }) => {
               whileTap={{ scale: 3 }}
               transition={{ duration: 0.5 }}
               src={theme === "light" ? github : githubw}
-              alt=""
+              alt="github-icon"
             />
             <motion.img
               onClick={() =>
@@ -100,7 +102,7 @@ const Home = ({ theme, themeToggler }) => {
               whileTap={{ scale: 3 }}
               transition={{ duration: 0.5 }}
               src={theme === "light" ? linkdIcon : linkdnw}
-              alt=""
+              alt="linkedin-icon"
             />
             <p className="date-now"> - {dateNow.toLocaleDateString()}</p>
           </div>

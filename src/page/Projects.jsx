@@ -45,7 +45,7 @@ const Projects = ({ theme }) => {
               animate={hoverCard === "1" ? { scale: 1.13 } : { scale: 1 }}
               transition={{ duration: 0.6 }}
               src={imgPort}
-              alt=""
+              alt="portfolio-img"
             />
             <motion.div
               animate={hoverCard === "1" ? "open" : "close"}
@@ -87,7 +87,7 @@ const Projects = ({ theme }) => {
               animate={hoverCard === "2" ? { scale: 1.13 } : { scale: 1 }}
               transition={{ duration: 0.6 }}
               src="https://picsum.photos/300/200?random"
-              alt=""
+              alt="random-img"
             />
             <motion.div
               animate={hoverCard === "2" ? "open" : "close"}
@@ -122,7 +122,7 @@ const Projects = ({ theme }) => {
               animate={hoverCard === "3" ? { scale: 1.13 } : { scale: 1 }}
               transition={{ duration: 0.6 }}
               src="https://picsum.photos/300/200?random"
-              alt=""
+              alt="random-img"
             />
             <motion.div
               animate={hoverCard === "3" ? "open" : "close"}

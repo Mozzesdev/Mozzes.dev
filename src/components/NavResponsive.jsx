@@ -127,7 +127,7 @@ const NavResponsive = ({
                     data-tip
                     data-for="language"
                     className="translate-responsive"
-                    alt=""
+                    alt="translate-icon"
                   />
                   <p>Select Language</p>
                 </div>
@@ -135,7 +135,7 @@ const NavResponsive = ({
                   animate={language ? { rotate: 0 } : { rotate: 180 }}
                   className="arrow-down__responsive"
                   src={theme === "light" ? arrowdown : downArrowIcon}
-                  alt=""
+                  alt="arrow"
                 />
               </ContainerLanguage>
             </ContainerIcons>

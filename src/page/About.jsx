@@ -65,7 +65,7 @@ const About = ({ theme }) => {
             </p>
             <a href="/cv" target="_blank">
               <button className="cv-download">
-                <img src={docIcon} alt="" />{" "}
+                <img src={docIcon} alt="pdf-icon" />{" "}
                 <FormattedMessage
                   id="about.download"
                   defaultMessage="Download"
@@ -97,7 +97,7 @@ const About = ({ theme }) => {
                   onMouseLeave={() => setHoverIcon("")}
                   onMouseEnter={() => setHoverIcon("HTML")}
                   src={hoverIcon === "HTML" ? htmlIconColor : htmlIcon}
-                  alt=""
+                  alt="html-icon"
                 />
               </div>
               <div>
@@ -115,7 +115,7 @@ const About = ({ theme }) => {
                   onMouseLeave={() => setHoverIcon("")}
                   onMouseEnter={() => setHoverIcon("CSS")}
                   src={hoverIcon === "CSS" ? cssIconColor : cssIcon}
-                  alt=""
+                  alt="css-icon"
                 />
               </div>
               <div>
@@ -133,7 +133,7 @@ const About = ({ theme }) => {
                   onMouseLeave={() => setHoverIcon("")}
                   onMouseEnter={() => setHoverIcon("JavaScript")}
                   src={hoverIcon === "JavaScript" ? jsIconColor : jsIcon}
-                  alt=""
+                  alt="js-icon"
                 />
               </div>
               <div>
@@ -146,7 +146,7 @@ const About = ({ theme }) => {
                   onMouseLeave={() => setHoverIcon("")}
                   onMouseEnter={() => setHoverIcon("ReactJS")}
                   src={hoverIcon === "ReactJS" ? reactIconColor : reactIcon}
-                  alt=""
+                  alt="react-icon"
                 />
               </div>
               <div>
@@ -161,7 +161,7 @@ const About = ({ theme }) => {
                   onMouseLeave={() => setHoverIcon("")}
                   onMouseEnter={() => setHoverIcon("Sass")}
                   src={hoverIcon === "Sass" ? sassIconColor : sassIcon}
-                  alt=""
+                  alt="sass-icon"
                 />
               </div>
               <div>
@@ -178,7 +178,7 @@ const About = ({ theme }) => {
                   src={
                     hoverIcon === "Firebase" ? firebaseIconColor : firebaseIcon
                   }
-                  alt=""
+                  alt="firebase-icon"
                 />
               </div>
               <div>
@@ -197,7 +197,7 @@ const About = ({ theme }) => {
                       ? bootstrapIconColor
                       : bootstrapIcon
                   }
-                  alt=""
+                  alt="bootstrap-icon"
                 />
               </div>
               <div>
@@ -210,7 +210,7 @@ const About = ({ theme }) => {
                   onMouseLeave={() => setHoverIcon("")}
                   onMouseEnter={() => setHoverIcon("PHP")}
                   src={hoverIcon === "PHP" ? phpIconColor : phpIcon}
-                  alt=""
+                  alt="php-icon"
                 />
               </div>
               <div>
@@ -223,7 +223,7 @@ const About = ({ theme }) => {
                   onMouseLeave={() => setHoverIcon("")}
                   onMouseEnter={() => setHoverIcon("Git")}
                   src={hoverIcon === "Git" ? gitIconColor : gitIcon}
-                  alt=""
+                  alt="git-icon"
                 />
               </div>
             </div>

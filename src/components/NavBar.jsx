@@ -1,15 +1,12 @@
 import styled from "styled-components";
 
 //Icons NavBar
-import downArrowIcon from "../icons/downArrow.svg";
-import arrowdown from "../icons/arrowdown.svg";
-import googletranslateIcon from "../icons/googletranslate.svg";
 import menuIcon from "../img/logo3.png";
 //End Icons
 
 import ReactTooltip from "react-tooltip";
 import { motion } from "framer-motion";
-import { useState, useContext, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { FormattedMessage } from "react-intl";
 import Language from "./Language";
 import NavResponsive from "./NavResponsive";
@@ -69,7 +66,7 @@ const NavBar = ({ themeToggler, theme }) => {
       >
         <NavigateBar className="navegacion-principal" scrollNav={scrollNav}>
           <ContainerLogo>
-            <img src={menuIcon} alt="" />
+            <img src={menuIcon} alt="Logo" />
             <h1>
               <a href="#home">mozzes</a>
             </h1>
@@ -152,12 +149,6 @@ const NavBar = ({ themeToggler, theme }) => {
               >
                 <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
               </motion.svg>
-              {/* <motion.img
-                animate={language ? { rotate: 180 } : { rotate: 0 }}
-                className="arrow-down"
-                src={theme === "light" ? downArrowIcon : arrowdown}
-                alt=""
-              /> */}
               <Language language={language} setLanguage={setLanguage} />
             </ContainerLanguage>
           </ContainerIcons>

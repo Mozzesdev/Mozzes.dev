@@ -41,7 +41,7 @@ const Language = ({ language, setLanguage }) => {
             defaultMessage="Español"
           />
         </p>
-        <img src={esIcon} alt="" />
+        <img src={esIcon} alt="es-icon" />
       </div>
       <div className="divContainer" onClick={()=> {
         changeLang('en-US')
@@ -53,7 +53,7 @@ const Language = ({ language, setLanguage }) => {
             defaultMessage="Ingles"
           />
         </p>
-        <img src={usIcon} alt="" />
+        <img src={usIcon} alt="us-icon" />
       </div>
     </motion.div>
   );
