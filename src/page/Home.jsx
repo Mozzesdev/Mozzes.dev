@@ -123,7 +123,7 @@ export default Home;
 const Header = styled.header`
   display: flex;
   width: 90%;
-  margin: 70px auto 0;
+  margin: 110px auto 0;
   align-items: center;
   justify-content: center;
   @media (max-width: 800px) {
