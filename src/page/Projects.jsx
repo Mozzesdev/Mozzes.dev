@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { FormattedMessage } from "react-intl";
 
 import imgPort from "../img/Portf.webp";
+import cafeBlog from "../img/Cafeblog.webp";
+import festival from "../img/Festival.webp";
 
 const variants = {
   open: {
@@ -42,7 +44,7 @@ const Projects = ({ theme }) => {
             onMouseEnter={() => setHoverCard("1")}
           >
             <motion.img
-              animate={hoverCard === "1" ? { scale: 1.13 } : { scale: 1 }}
+              animate={hoverCard === "1" ? { scale: 1.05 } : { scale: 1 }}
               transition={{ duration: 0.6 }}
               src={imgPort}
               alt="portfolio-img"
@@ -84,9 +86,9 @@ const Projects = ({ theme }) => {
             onMouseEnter={() => setHoverCard("2")}
           >
             <motion.img
-              animate={hoverCard === "2" ? { scale: 1.13 } : { scale: 1 }}
+              animate={hoverCard === "2" ? { scale: 1.05 } : { scale: 1 }}
               transition={{ duration: 0.6 }}
-              src="https://picsum.photos/300/200?random"
+              src={cafeBlog}
               alt="random-img"
             />
             <motion.div
@@ -95,14 +97,19 @@ const Projects = ({ theme }) => {
               variants={variants}
               className="hover-card"
             >
-              <h4 className="subtitle-projects__card">AlinDesign - Store</h4>
-              <p>Handmade creative design e-commerce</p>
+              <h4 className="subtitle-projects__card">Cafe Blog - Practice</h4>
+              <p>A cafe blog for practice html and css</p>
               <div className="container-button__card">
                 <button>
-                  <FormattedMessage
-                    id="projects.viewpage"
-                    defaultMessage="View page"
-                  />
+                  <a
+                    href="https://cafeblog-designspace.netlify.app/"
+                    target="_blank"
+                  >
+                    <FormattedMessage
+                      id="projects.viewpage"
+                      defaultMessage="View page"
+                    />
+                  </a>
                 </button>
                 <button>
                   <FormattedMessage
@@ -119,9 +126,9 @@ const Projects = ({ theme }) => {
             onMouseEnter={() => setHoverCard("3")}
           >
             <motion.img
-              animate={hoverCard === "3" ? { scale: 1.13 } : { scale: 1 }}
+              animate={hoverCard === "3" ? { scale: 1.05 } : { scale: 1 }}
               transition={{ duration: 0.6 }}
-              src="https://picsum.photos/300/200?random"
+              src={festival}
               alt="random-img"
             />
             <motion.div
@@ -130,14 +137,21 @@ const Projects = ({ theme }) => {
               variants={variants}
               className="hover-card"
             >
-              <h4 className="subtitle-projects__card">Title #1</h4>
-              <p>Descripcion de la pagina</p>
+              <h4 className="subtitle-projects__card">
+                Festival de Música - Practice
+              </h4>
+              <p>A simple project about a music festival</p>
               <div className="container-button__card">
                 <button>
-                  <FormattedMessage
-                    id="projects.viewpage"
-                    defaultMessage="View page"
-                  />
+                  <a
+                    href="https://designspace-festivalmusica.netlify.app/"
+                    target="_blank"
+                  >
+                    <FormattedMessage
+                      id="projects.viewpage"
+                      defaultMessage="View page"
+                    />
+                  </a>
                 </button>
                 <button>
                   <FormattedMessage
@@ -252,7 +266,7 @@ const ContainerCards = styled.div`
           font-size: 14px;
           color: #424242;
           font-weight: 500;
-          a{
+          a {
             color: #424242;
           }
           @media (max-width: 340px) {
