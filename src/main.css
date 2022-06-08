@@ -33,6 +33,7 @@ a {
 .react-color img {
   vertical-align: middle;
   margin-bottom: 4px;
+  width: 23px;
 }
 
 .tooltip-language {

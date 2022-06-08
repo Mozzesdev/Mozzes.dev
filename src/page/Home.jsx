@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useEffect } from "react";
 import lol from "../img/Lol.webp";
 import lolDark from "../img/LolDark.webp";
-import reactColor from '../icons/react.color.svg'
+import reactColor from "../icons/react.color.svg";
 import linkdIcon from "../icons/linkd.svg";
 import linkdnw from "../icons/linkdnw.svg";
 import github from "../icons/github.svg";
@@ -75,8 +75,8 @@ const Home = ({ theme, themeToggler }) => {
               <motion.img
                 animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-                alt='react-icon'
-                src={reactColor}
+                alt="react-icon"
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
               />
             </span>
           </p>

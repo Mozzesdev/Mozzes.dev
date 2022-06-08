@@ -16,6 +16,7 @@ export const lightTheme = {
 export const darkTheme = {
   body: "#1a1a1a",
   bodyInverse: "#f7f7f7",
+  fontColorLow: "#acacac",
   fontColor: "#f3f3f3",
   fontColorInverse: "#424242",
   border: "1px solid #1a1a1a",
@@ -35,6 +36,13 @@ export const GlobalStyles = createGlobalStyle`
 
   h1,h2,h3,h4,p,a{
    color: ${(props) => props.theme.fontColor};
+  }
+  .p-subtitle-2{
+    color: ${(props) => props.theme.fontColorLow};
+  }
+  .subtitle-about{
+    
+    color: ${(props) => props.theme.fontColorLow};
   }
 
   .navegacion-principal{

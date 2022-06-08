@@ -6,6 +6,7 @@ import { FormattedMessage } from "react-intl";
 import imgPort from "../img/Portf.webp";
 import cafeBlog from "../img/Cafeblog.webp";
 import festival from "../img/Festival.webp";
+import giffy from "../img/giffy.png";
 
 const variants = {
   open: {
@@ -112,10 +113,12 @@ const Projects = ({ theme }) => {
                   </a>
                 </button>
                 <button>
-                  <FormattedMessage
-                    id="projects.repositorie"
-                    defaultMessage="Repositorie"
-                  />
+                <a href="https://github.com/WinFlix/Blog-de-Caf-" target="_blank">
+                    <FormattedMessage
+                      id="projects.repositorie"
+                      defaultMessage="Repositorie"
+                    />
+                  </a>
                 </button>
               </div>
             </motion.div>
@@ -154,10 +157,59 @@ const Projects = ({ theme }) => {
                   </a>
                 </button>
                 <button>
-                  <FormattedMessage
-                    id="projects.repositorie"
-                    defaultMessage="Repositorie"
-                  />
+                  <a
+                    href="https://github.com/WinFlix/FestivalMusica--SASS-"
+                    target="_blank"
+                  >
+                    <FormattedMessage
+                      id="projects.repositorie"
+                      defaultMessage="Repositorie"
+                    />
+                  </a>
+                </button>
+              </div>
+            </motion.div>
+          </div>
+          <div
+            className="container-card"
+            onMouseLeave={() => setHoverCard("")}
+            onMouseEnter={() => setHoverCard("4")}
+          >
+            <motion.img
+              animate={hoverCard === "4" ? { scale: 1.05 } : { scale: 1 }}
+              transition={{ duration: 0.6 }}
+              src={giffy}
+              alt="random-img"
+            />
+            <motion.div
+              animate={hoverCard === "4" ? "open" : "close"}
+              transition={{ duration: 0.6 }}
+              variants={variants}
+              className="hover-card"
+            >
+              <h4 className="subtitle-projects__card">
+                Giffy App - App for Gifs
+              </h4>
+              <p>A project with API of GIPHY</p>
+              <div className="container-button__card">
+                <button>
+                  <a href="https://giffy-app-ten.vercel.app" target="_blank">
+                    <FormattedMessage
+                      id="projects.viewpage"
+                      defaultMessage="View page"
+                    />
+                  </a>
+                </button>
+                <button>
+                  <a
+                    href="https://github.com/WinFlix/Giffy-App"
+                    target="_blank"
+                  >
+                    <FormattedMessage
+                      id="projects.repositorie"
+                      defaultMessage="Repositorie"
+                    />
+                  </a>
                 </button>
               </div>
             </motion.div>
