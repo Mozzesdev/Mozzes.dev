@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import pdf from '../assets/moiseszambrano.pdf'
+import pdf from '../assets/CV.pdf'
 
 const PdfView = () => {
 
@@ -15,7 +15,7 @@ const PdfView = () => {
     <>
       <div style={{width: '100%', height: '100%', position: 'absolute'}}>
        <object data={pdf} type="application/pdf" width='100%' height='100%'>
-         <a href={pdf} download='MoisesZambrano-Cv.pdf' id='downloadPdf'>Descargar Pdf</a>
+         <a href={pdf} download='MoisesZambrano-CV.pdf' id='downloadPdf'>Descargar Pdf</a>
        </object>
       </div>
     </>
