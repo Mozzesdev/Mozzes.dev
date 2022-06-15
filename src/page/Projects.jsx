@@ -7,6 +7,8 @@ import imgPort from "../img/Portf.webp";
 import cafeBlog from "../img/Cafeblog.webp";
 import festival from "../img/Festival.webp";
 import giffy from "../img/giffy.png";
+import calcu from '../img/calcu.png'
+import weather from '../img/weather.png'
 
 const variants = {
   open: {
@@ -89,7 +91,7 @@ const Projects = ({ theme }) => {
             <motion.img
               animate={hoverCard === "2" ? { scale: 1.05 } : { scale: 1 }}
               transition={{ duration: 0.6 }}
-              src={cafeBlog}
+              src={calcu}
               alt="random-img"
             />
             <motion.div
@@ -98,12 +100,12 @@ const Projects = ({ theme }) => {
               variants={variants}
               className="hover-card"
             >
-              <h4 className="subtitle-projects__card">Cafe Blog - Practice</h4>
-              <p>A cafe blog for practice html and css</p>
+              <h4 className="subtitle-projects__card">Calculator App - Practice</h4>
+              <p>A simple calculator with React</p>
               <div className="container-button__card">
                 <button>
                   <a
-                    href="https://cafeblog-designspace.netlify.app/"
+                    href="https://calculator-app-green.vercel.app"
                     target="_blank"
                   >
                     <FormattedMessage
@@ -113,7 +115,7 @@ const Projects = ({ theme }) => {
                   </a>
                 </button>
                 <button>
-                <a href="https://github.com/WinFlix/Blog-de-Caf-" target="_blank">
+                <a href="https://github.com/WinFlix/Calculator-App" target="_blank">
                     <FormattedMessage
                       id="projects.repositorie"
                       defaultMessage="Repositorie"
@@ -131,7 +133,7 @@ const Projects = ({ theme }) => {
             <motion.img
               animate={hoverCard === "3" ? { scale: 1.05 } : { scale: 1 }}
               transition={{ duration: 0.6 }}
-              src={festival}
+              src={weather}
               alt="random-img"
             />
             <motion.div
@@ -141,13 +143,13 @@ const Projects = ({ theme }) => {
               className="hover-card"
             >
               <h4 className="subtitle-projects__card">
-                Festival de Música - Practice
+                Weather App - Practice
               </h4>
-              <p>A simple project about a music festival</p>
+              <p>Weather app with API of WeatherMap</p>
               <div className="container-button__card">
                 <button>
                   <a
-                    href="https://designspace-festivalmusica.netlify.app/"
+                    href="https://weather-web-topaz.vercel.app"
                     target="_blank"
                   >
                     <FormattedMessage
@@ -158,7 +160,7 @@ const Projects = ({ theme }) => {
                 </button>
                 <button>
                   <a
-                    href="https://github.com/WinFlix/FestivalMusica--SASS-"
+                    href="https://github.com/WinFlix/Weather-App"
                     target="_blank"
                   >
                     <FormattedMessage
