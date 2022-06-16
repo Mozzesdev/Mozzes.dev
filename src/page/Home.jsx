@@ -94,7 +94,7 @@ const Home = ({ theme, themeToggler }) => {
             <motion.img
               onClick={() =>
                 window.open(
-                  "https://www.linkedin.com/in/mois%C3%A9s-omar-zambrano-rodr%C3%ADguez-6a1310174/",
+                  "https://www.linkedin.com/in/mozzesdev/",
                   "_blank"
                 )
               }
