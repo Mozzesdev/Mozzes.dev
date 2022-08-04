@@ -7,11 +7,11 @@ const Contact = () => {
   const [hoverCard, setHoverCard] = useState("");
   return (
     <ContainerSectionContact id="contact">
-      <h2>
+      <h2 className="title-color">
         <FormattedMessage id="contact.title" defaultMessage="Contact" />
       </h2>
       <div className="title-line" />
-      <p>
+      <p className="tex-color__secundary">
         <FormattedMessage
           id="contact.subtitle"
           defaultMessage="I am always available for any job, write me whenever you want."
@@ -86,14 +86,14 @@ const Contact = () => {
 export default Contact;
 
 const ContainerSectionContact = styled.div`
-  width: 85%;
-  margin: 80px auto 0;
+  width: 100%;
+  margin: 30px auto 0;
+  padding: 40px 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   p {
-    color: #acacac;
     margin-top: 20px;
     text-align: center;
   }
@@ -104,6 +104,7 @@ const ContainerCards = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
   width: 80%;
+  max-width: 1300px;
   justify-content: center;
   margin-top: 20px;
   @media (max-width: 250px) {

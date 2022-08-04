@@ -25,5 +25,6 @@ const FooterContainer = styled.footer`
   text-align: center;
   p{
     font-weight: 300;
+    color: ${({theme}) => theme.navText};
   }
 `;

@@ -6,10 +6,16 @@ import LanguageResponsive from "./LanguageResponsive";
 import downArrowIcon from "../icons/downArrow.svg";
 import arrowdown from "../icons/arrowdown.svg";
 import googletranslateIcon from "../icons/googletranslate.svg";
+import { Modes } from "./NavBar";
+import Sun from "./svg/Sun";
+import Moon from "./svg/Moon";
+import IconWrapper from "./IconWrapper";
+import ArrowDown from "./svg/ArrowDown";
+import Translate from "./svg/Translate";
 
 const variants = {
   open: {
-    width: ["0%", "73%"],
+    width: ["0%", "70%"],
     opacity: ["0", "1"],
   },
   close: {
@@ -33,7 +39,7 @@ const NavResponsive = ({
           onClick={() => {
             cambiarEstado(!estado);
             setLanguage(!language);
-            disableScroll.off();
+            disableScroll();
           }}
         >
           <motion.div
@@ -47,7 +53,7 @@ const NavResponsive = ({
               <a
                 href="#home"
                 onClick={() => {
-                  disableScroll.off();
+                  disableScroll();
                   cambiarEstado(!estado);
                 }}
               >
@@ -56,7 +62,7 @@ const NavResponsive = ({
               <a
                 href="#about"
                 onClick={() => {
-                  disableScroll.off();
+                  disableScroll();
                   cambiarEstado(!estado);
                 }}
               >
@@ -65,7 +71,7 @@ const NavResponsive = ({
               <a
                 href="#services"
                 onClick={() => {
-                  disableScroll.off();
+                  disableScroll();
                   cambiarEstado(!estado);
                 }}
               >
@@ -74,7 +80,7 @@ const NavResponsive = ({
               <a
                 href="#projects"
                 onClick={() => {
-                  disableScroll.off();
+                  disableScroll();
                   cambiarEstado(!estado);
                 }}
               >
@@ -83,7 +89,7 @@ const NavResponsive = ({
               <a
                 href="#contact"
                 onClick={() => {
-                  disableScroll.off();
+                  disableScroll();
                   cambiarEstado(!estado);
                 }}
               >
@@ -91,53 +97,29 @@ const NavResponsive = ({
               </a>
             </ContainerLinks>
             <ContainerIcons>
-              <div className="modes-responsive" onClick={themeToggler}>
-                <motion.svg
-                  className="sun"
-                  animate={
-                    theme === "light"
-                      ? { fill: "#424242" }
-                      : { fill: "#f1f1f1" }
-                  }
-                >
-                  <path d="M6.995 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007-2.246-5.007-5.007-5.007S6.995 9.239 6.995 12zM11 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2H2zm17 0h3v2h-3zM5.637 19.778l-1.414-1.414 2.121-2.121 1.414 1.414zM16.242 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.344 7.759 4.223 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z"></path>
-                </motion.svg>
-                <motion.svg
-                  className="moon"
-                  animate={
-                    theme === "light"
-                      ? { fill: "#000000" }
-                      : { fill: "#f1f1f1" }
-                  }
-                >
-                  <path d="M12 11.807A9.002 9.002 0 0 1 10.049 2a9.942 9.942 0 0 0-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142 3.906 3.906 10.237 3.905 14.143 0a9.946 9.946 0 0 0 2.735-5.119A9.003 9.003 0 0 1 12 11.807z"></path>
-                </motion.svg>
-              </div>
+              <Modes onClick={themeToggler} mode={theme} className="mode">
+                <div className="switch-icons">
+                  <Sun className="sun" />
+                  <Moon className="moon" />
+                </div>
+                <motion.div layout className="handle" />
+              </Modes>
+
+              <ContainerLanguage
+                onClick={() => setLanguage(!language)}
+              >
+                <div className="flex-row">
+                  <IconWrapper>
+                    <Translate width={43} height={43} style={{transform: "scale(0.8)"}}/>
+                  </IconWrapper>
+                  <p>Select Language</p>
+                </div>
+                <ArrowDown width={18} height={18} className="arrow-down"/>
+              </ContainerLanguage>
               <LanguageResponsive
                 language={language}
                 setLanguage={setLanguage}
               />
-              <ContainerLanguage
-                className="language-btn"
-                onClick={() => setLanguage(!language)}
-              >
-                <div className="flex-row">
-                  <img
-                    src={googletranslateIcon}
-                    data-tip
-                    data-for="language"
-                    className="translate-responsive"
-                    alt="translate-icon"
-                  />
-                  <p>Select Language</p>
-                </div>
-                <motion.img
-                  animate={language ? { rotate: 0 } : { rotate: 180 }}
-                  className="arrow-down__responsive"
-                  src={theme === "light" ? arrowdown : downArrowIcon}
-                  alt="arrow"
-                />
-              </ContainerLanguage>
             </ContainerIcons>
           </motion.div>
         </Overlay>
@@ -152,37 +134,37 @@ const Overlay = styled.div`
   width: 100%;
   height: 100vh;
   position: fixed;
-  background-color: #1a1a1ac9;
+  background-color: #00000038;
   z-index: 20;
   top: 0;
   left: 0;
+  display: flex;
+  justify-content: flex-end;
   .container-nav__responsive {
-    width: 0%;
     height: 100%;
-    margin: 0 0 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    overflow-y: scroll;
+    overflow-y: auto;
+    background-color: ${({ theme }) => theme.body};
   }
 `;
 
 const ContainerLinks = styled.div`
   width: 100%;
-  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 25px;
+  margin-bottom: 30px;
   a {
     font-size: 18px;
     padding: 10px 20px;
     text-align: left;
     width: 100%;
+    color: ${({ theme }) => theme.navText};
     :hover {
       background-color: #424242;
-      color: #f1f1f1;
+      color: ${({ theme }) => theme.bodyLight};
       transition: 0.3s all;
     }
     @media (max-width: 508px) {
@@ -198,70 +180,23 @@ const ContainerIcons = styled.div`
   justify-content: center;
   padding-left: 25px;
   width: 100%;
-  .modes-responsive {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 5px 8px;
-    cursor: pointer;
-    border-radius: 12px;
-    .sun {
-      width: 24px;
-      height: 24px;
-      margin: 0 15px 0 0;
-    }
-    .moon {
-      width: 24px;
-      height: 24px;
-    }
+  .mode {
+    margin-left: 5px;
   }
 `;
 
 const ContainerLanguage = styled.div`
   display: flex;
   align-items: center;
-  margin: 10px 0 60px 0;
   width: 90%;
   justify-content: space-between;
   cursor: pointer;
-  .translate-responsive {
-    width: 40px;
+  margin-top: 10px;
+  .flex-row{
+    gap: 10px;
+    color: ${({ theme }) => theme.navText};
   }
-  .arrow-down__responsive {
-    width: 35px;
-  }
-  .container-div {
-    width: 130px;
-    opacity: 0;
-    overflow: hidden;
-    max-height: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    padding: 6px 0;
-    top: 28px;
-    z-index: 2;
-    right: -9px;
-    border-radius: 8px;
-    .divContainer {
-      transition: 0.5 all;
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      justify-content: space-between;
-      width: 100%;
-      padding: 4px 15px;
-      margin: 3px 0;
-      gap: 10px;
-      :hover {
-        background-color: #e1e1e1;
-      }
-      img {
-        object-fit: cover;
-        width: 18px;
-        height: 18px;
-        border-radius: 50%;
-      }
-    }
+  .arrow-down{
+    fill: ${({ theme }) => theme.navText};
   }
 `;

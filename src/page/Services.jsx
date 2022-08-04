@@ -3,20 +3,17 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { FormattedMessage } from "react-intl";
 
-import AOS from "aos";
-AOS.init();
-
 const Services = () => {
   const [hoverCard, setHoverCard] = useState("");
 
   return (
     <>
       <ContainerServices id="services">
-        <h2>
+        <h2 className="title-color">
           <FormattedMessage id="services.title" defaultMessage="Services" />
           <div className="title-line" />
         </h2>
-        <p className="subtitle-services">
+        <p className="subtitle-services tex-color__primary">
           <FormattedMessage
             id="services.subtitle"
             defaultMessage="Services I offer to my clients"
@@ -207,11 +204,11 @@ const Services = () => {
 export default Services;
 
 const ContainerServices = styled.div`
-  width: 88%;
-  margin: 30px auto 0;
-  padding-top: 40px;
-  @media (max-width: 1040px) {
-    width: 90%;
+  width: 100%;
+  background-color: ${({ theme }) => theme.bodyLight};
+  padding: 40px 50px 50px;
+  @media (max-width: 768px) {
+    padding: 40px 20px;
   }
   h2 {
     text-align: center;
@@ -224,26 +221,24 @@ const ContainerServices = styled.div`
   .subtitle-services {
     text-align: center;
     font-size: 17px;
-    color: #acacac;
   }
 `;
 
 const ContainerAllServices = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   text-align: center;
-  margin-top: 10px;
-  @media (max-width: 742px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (max-width: 340px) {
-    grid-template-columns: repeat(1, 1fr);
+  max-width: 1300px;
+  margin: 15px auto;
+  gap: 60px;
+  @media (max-width: 768px) {
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
   .container-div__services {
-    width: 340px;
-    height: 190px;
-    margin: 10px auto;
-    padding: 22px 20px 13px;
+    width: 100%;
+    height: 100%;
+    padding: 22px 10px 13px;
     background-color: #2d2d2d;
     border-bottom: 4px solid transparent;
     transition: 0.4s all;
@@ -251,6 +246,7 @@ const ContainerAllServices = styled.div`
       margin-bottom: 8px;
       font-size: 18px;
       font-weight: 600;
+      color: ${({ theme }) => theme.modeSwitch};
     }
     svg {
       margin: 7px 0 6px 0;
@@ -276,18 +272,12 @@ const ContainerAllServices = styled.div`
       transition: 0.4s all;
     }
 
-    @media (max-width: 1100px) {
-      width: 290px;
-      padding: 18px 14px 0;
-    }
     @media (max-width: 956px) {
-      width: 240px;
       svg {
         transform: scale(1.1);
       }
     }
     @media (max-width: 808px) {
-      width: 220px;
       svg {
         transform: scale(1.1);
       }
@@ -298,7 +288,6 @@ const ContainerAllServices = styled.div`
       }
     }
     @media (max-width: 742px) {
-      width: 300px;
       svg {
         transform: scale(1.1);
       }
@@ -312,7 +301,6 @@ const ContainerAllServices = styled.div`
       }
     }
     @media (max-width: 664px) {
-      width: 250px;
       svg {
         transform: scale(1.1);
       }
@@ -326,8 +314,6 @@ const ContainerAllServices = styled.div`
       }
     }
     @media (max-width: 557px) {
-      width: 220px;
-      padding: 18px 16px 9px;
       svg {
         transform: scale(0.9);
         margin: 4px 0 6px 0;
@@ -342,9 +328,6 @@ const ContainerAllServices = styled.div`
       }
     }
     @media (max-width: 487px) {
-      width: 180px;
-      height: 195px;
-      padding: 18px 16px 9px;
       svg {
         transform: scale(0.9);
         margin: 4px 0 6px 0;
@@ -359,11 +342,8 @@ const ContainerAllServices = styled.div`
       }
     }
     @media (max-width: 405px) {
-      width: 150px;
-      height: 194px;
-      padding: 18px 16px 9px;
       svg {
-        transform: scale(0.9);
+        transform: scale(1.3);
         margin: 4px 0 6px 0;
       }
       h4 {
@@ -376,9 +356,6 @@ const ContainerAllServices = styled.div`
       }
     }
     @media (max-width: 340px) {
-      width: 230px;
-      height: 180px;
-      padding: 18px 16px 9px;
       svg {
         transform: scale(1.2);
         margin: 4px 0 6px 0;

@@ -10,12 +10,21 @@ import { useState, useEffect } from "react";
 import { FormattedMessage } from "react-intl";
 import Language from "./Language";
 import NavResponsive from "./NavResponsive";
-import disableScroll from "disable-scroll";
+import Translate from "./svg/Translate";
+import ArrowDown from "./svg/ArrowDown";
+import { useTheme } from "../context/themeContext";
+import { addOpacityColor } from "../utils";
+import Sun from "./svg/Sun";
+import Moon from "./svg/Moon";
 
-const NavBar = ({ themeToggler, theme }) => {
+const NavBar = () => {
   const [language, setLanguage] = useState(false);
   const [scrollNav, setScrollNav] = useState(false);
   const [navbarResponsive, setNavbarResponsive] = useState(false);
+
+  const { themeMode, themeToggler } = useTheme();
+
+  const theme = themeMode;
 
   function navegacionFija() {
     const dateNow = document.querySelector(".date-now");
@@ -28,6 +37,14 @@ const NavBar = ({ themeToggler, theme }) => {
       }
     });
   }
+
+  const disableScroll = () => {
+    if (navbarResponsive === true) {
+      document.body.style.overflow = "auto";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
+  };
 
   useEffect(() => {
     navegacionFija();
@@ -44,132 +61,67 @@ const NavBar = ({ themeToggler, theme }) => {
         language={language}
         setLanguage={setLanguage}
       />
-      <motion.div
-        initial={{ width: "100%" }}
-        animate={
-          scrollNav === true
-            ? {
-                position: "fixed",
-                width: "100%",
-                maxHeight: "63px",
-                height: ["0%", "100%"],
-                boxShadow: "1px 3px 20px rgba(51, 51, 51, 0.138)",
-                top: 0,
-                zIndex: 2,
-              }
-            : {
-                width: "100%",
-                zIndex: 2,
-              }
-        }
-        transition={{ duration: 0 }}
-      >
-        <NavigateBar className="navegacion-principal" scrollNav={scrollNav}>
-          <ContainerLogo>
-            <img src={menuIcon} alt="Logo" />
-            <h1>
-              <a href="#home">mozzes</a>
-            </h1>
-          </ContainerLogo>
-          <ContainerLinks>
-            <a href="#home">Home</a>
-            <a href="#about">
-              <FormattedMessage id="nav.about" defaultMessage="About" />
-            </a>
-            <a href="#services">
-              <FormattedMessage id="nav.services" defaultMessage="Services" />
-            </a>
-            <a href="#projects">
-              <FormattedMessage id="nav.projects" defaultMessage="Projects" />
-            </a>
-            <a href="#contact">
-              <FormattedMessage id="nav.contact" defaultMessage="Contact" />
-            </a>
-          </ContainerLinks>
-          <ContainerIcons>
-            <div
-              className="modes"
-              onClick={themeToggler}
-              data-tip
-              data-for="mode-switch"
-            >
-              <motion.svg
-                className="sun"
-                animate={
-                  theme === "light" ? { fill: "#424242" } : { fill: "#f1f1f1" }
-                }
-              >
-                <path d="M6.995 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007-2.246-5.007-5.007-5.007S6.995 9.239 6.995 12zM11 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2H2zm17 0h3v2h-3zM5.637 19.778l-1.414-1.414 2.121-2.121 1.414 1.414zM16.242 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.344 7.759 4.223 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z"></path>
-              </motion.svg>
-              <motion.svg
-                className="moon"
-                animate={
-                  theme === "light" ? { fill: "#424242" } : { fill: "#f1f1f1" }
-                }
-              >
-                <path d="M12 11.807A9.002 9.002 0 0 1 10.049 2a9.942 9.942 0 0 0-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142 3.906 3.906 10.237 3.905 14.143 0a9.946 9.946 0 0 0 2.735-5.119A9.003 9.003 0 0 1 12 11.807z"></path>
-              </motion.svg>
-            </div>
-            <ContainerLanguage
-              className="language-btn"
-              onClick={() => setLanguage(!language)}
-            >
-              <svg data-tip data-for="language" className="translate">
-                <path
-                  fill="#CFD8DC"
-                  d="M15,13h25c1.104,0,2,0.896,2,2v25c0,1.104-0.896,2-2,2H26L15,13z"
-                />
-                <path
-                  fill="#546E7A"
-                  d="M26.832,34.854l-0.916-1.776l0.889-0.459c0.061-0.031,6.101-3.208,9.043-9.104l0.446-0.895l1.79,0.893l-0.447,0.895c-3.241,6.496-9.645,9.85-9.916,9.989L26.832,34.854z"
-                />
-                <path
-                  fill="#546E7A"
-                  d="M38.019 34l-.87-.49c-.207-.116-5.092-2.901-8.496-7.667l1.627-1.162c3.139 4.394 7.805 7.061 7.851 7.087L39 32.26 38.019 34zM26 22H40V24H26z"
-                />
-                <path fill="#546E7A" d="M32 20H34V24H32z" />
-                <path
-                  fill="#2196F3"
-                  d="M33,35H8c-1.104,0-2-0.896-2-2V8c0-1.104,0.896-2,2-2h14L33,35z"
-                />
-                <path fill="#3F51B5" d="M26 42L23 35 33 35z" />
-                <path
-                  fill="#FFF"
-                  d="M19.172,24h-4.36l-1.008,3H11l4.764-13h2.444L23,27h-2.805L19.172,24z M15.444,22h3.101l-1.559-4.714L15.444,22z"
-                />
-              </svg>
-              <motion.svg
-                theme={theme}
-                animate={
-                  language
-                    ? { rotate: 180 }
-                    : { rotate: 0 }
-                }
-                className="arrow-down"
-              >
-                <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
-              </motion.svg>
-              <Language language={language} setLanguage={setLanguage} />
-            </ContainerLanguage>
-          </ContainerIcons>
-          <ContainerMenuResponsive
-            onClick={() => {
-              setNavbarResponsive(!navbarResponsive);
-              setLanguage(false);
-              disableScroll.on();
-            }}
+      <NavigateBar className="navegacion-principal" scrollNav={scrollNav}>
+        <ContainerLogo>
+          <img src={menuIcon} alt="Logo" />
+          <h1>
+            <a href="#home">mozzes</a>
+          </h1>
+        </ContainerLogo>
+        <ContainerLinks>
+          <a href="#home">Home</a>
+          <a href="#about">
+            <FormattedMessage id="nav.about" defaultMessage="About" />
+          </a>
+
+          <a href="#projects">
+            <FormattedMessage id="nav.projects" defaultMessage="Projects" />
+          </a>
+          <a href="#services">
+            <FormattedMessage id="nav.services" defaultMessage="Services" />
+          </a>
+          <a href="#contact">
+            <FormattedMessage id="nav.contact" defaultMessage="Contact" />
+          </a>
+        </ContainerLinks>
+        <ContainerIcons>
+          <Modes
+            onClick={themeToggler}
+            data-tip
+            data-for="mode-switch"
+            mode={theme}
           >
-            <motion.svg
-              initial={{ scale: 0.98 }}
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 1.04 }}
-              transition={{ duration: 0.3 }}
-            >
-              <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
-            </motion.svg>
-          </ContainerMenuResponsive>
-        </NavigateBar>
-      </motion.div>
+            <div className="switch-icons">
+              <Sun className="sun" />
+              <Moon className="moon" />
+            </div>
+            <motion.div layout className="handle" />
+          </Modes>
+          <ContainerLanguage
+            className="language-btn"
+            onClick={() => setLanguage(!language)}
+          >
+            <Translate />
+            <ArrowDown className="arrow-down" />
+            <Language language={language} setLanguage={setLanguage} />
+          </ContainerLanguage>
+        </ContainerIcons>
+        <ContainerMenuResponsive
+          onClick={() => {
+            setNavbarResponsive(!navbarResponsive);
+            setLanguage(false);
+            disableScroll();
+          }}
+        >
+          <motion.svg
+            initial={{ scale: 0.98 }}
+            whileTap={{ scale: 1.04 }}
+            transition={{ duration: 0.3 }}
+          >
+            <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+          </motion.svg>
+        </ContainerMenuResponsive>
+      </NavigateBar>
 
       <ReactTooltip
         id="mode-switch"
@@ -202,15 +154,19 @@ const NavBar = ({ themeToggler, theme }) => {
 export default NavBar;
 
 const NavigateBar = styled.div`
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   z-index: 3;
-  padding: 5px 0;
+  position: sticky;
+  top: 0;
+  padding: 5px 50px;
+  background-color: ${({ theme }) => theme.navBg};
+  backdrop-filter: blur(10px);
   @media (max-width: 890px) {
     justify-content: space-between;
+    padding: 5px 20px;
   }
 `;
 
@@ -223,6 +179,9 @@ const ContainerLogo = styled.div`
   }
   h1 {
     font-weight: 600;
+    a {
+      color: ${({ theme }) => theme.navText};
+    }
     @media (max-width: 582px) {
       font-size: 28px;
       font-weight: 500;
@@ -232,7 +191,6 @@ const ContainerLogo = styled.div`
 
 const ContainerLinks = styled.div`
   text-align: center;
-  margin: 0 auto;
   a {
     text-transform: uppercase;
     margin: 0 15px;
@@ -240,9 +198,12 @@ const ContainerLinks = styled.div`
     transition: 0.3s;
     letter-spacing: 1.5px;
     font-weight: 500;
+    color: ${({ theme }) => theme.navText};
     :hover {
       color: #61dafb;
       transition: 0.3s;
+      border-radius: 10px;
+      box-shadow: 0px 0px 20px rgba(97, 218, 251, 0.149), 0px 0px 20px rgba(97, 218, 251, 0.149) inset;
     }
     @media (max-width: 890px) {
       font-size: 12px;
@@ -259,7 +220,6 @@ const ContainerIcons = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 105px;
   img {
     cursor: pointer;
     width: 26px;
@@ -284,25 +244,6 @@ const ContainerIcons = styled.div`
       }
     }
   }
-  .modes {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 0 5px;
-    cursor: pointer;
-    border-radius: 12px;
-    .sun {
-      transform: scale(0.8);
-      width: 24px;
-      height: 24px;
-      margin: 0 3px 0 0;
-    }
-    .moon {
-      transform: scale(0.8);
-      width: 24px;
-      height: 24px;
-    }
-  }
   @media (max-width: 768px) {
     display: none;
   }
@@ -310,7 +251,6 @@ const ContainerIcons = styled.div`
 
 const ContainerLanguage = styled.div`
   .container-div {
-    width: 130px;
     opacity: 0;
     overflow: hidden;
     max-height: 0px;
@@ -319,6 +259,7 @@ const ContainerLanguage = styled.div`
     align-items: center;
     position: absolute;
     padding: 6px 0;
+    background-color: ${({ theme }) => theme.modeColor};
     top: 38px;
     z-index: 2;
     right: -9px;
@@ -333,8 +274,10 @@ const ContainerLanguage = styled.div`
       padding: 3px 15px;
       margin: 3px 0;
       gap: 10px;
+      color: ${({ theme }) => theme.body};
       :hover {
         background-color: #e1e1e1;
+        color: ${({ theme }) => theme.modeColor};
       }
       p {
         font-size: 14px;
@@ -348,6 +291,9 @@ const ContainerLanguage = styled.div`
         border-radius: 50%;
       }
     }
+  }
+  .arrow-down {
+    fill: ${({ theme }) => theme.navText};
   }
 `;
 
@@ -365,5 +311,45 @@ const ContainerMenuResponsive = styled.div`
     justify-content: center;
     align-items: center;
     cursor: pointer;
+  }
+`;
+
+export const Modes = styled.div`
+  width: 55px;
+  height: 25px;
+  border: 1px solid ${({ theme }) => addOpacityColor(theme.modeColor, 1)};
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+
+  .handle {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    background-color: ${({ theme }) => theme.modeSwitch};
+    border-radius: 50%;
+    left: ${({ mode }) => (mode === "light" ? "-5px" : "29px")};
+    box-shadow: rgb(0 0 0 / 20%) 0px 0px 2px 2px;
+  }
+
+  .switch-icons {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    .sun {
+      min-width: 19px;
+      max-width: 19px;
+      fill: ${({ theme }) => theme.modeColor};
+    }
+    .moon {
+      min-width: 18px;
+      max-width: 18px;
+      fill: ${({ theme }) => theme.modeColor};
+    }
   }
 `;

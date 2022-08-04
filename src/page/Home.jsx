@@ -1,10 +1,5 @@
 import { useEffect } from "react";
 import lol from "../img/Lol.webp";
-import lolDark from "../img/LolDark.webp";
-import linkdIcon from "../icons/linkd.svg";
-import linkdnw from "../icons/linkdnw.svg";
-import github from "../icons/github.svg";
-import githubw from "../icons/githubw.svg";
 import styled from "styled-components";
 import About from "./About";
 import { motion } from "framer-motion";
@@ -15,11 +10,12 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Services from "./Services";
 
-import AOS from "aos";
 import Contact from "./Contact";
-AOS.init();
+import Github from "../components/svg/Github";
+import IconWrapper from "../components/IconWrapper";
+import Linkd from "../components/svg/Linkedin";
 
-const Home = ({ theme, themeToggler }) => {
+const Home = () => {
   const dateNow = new Date();
 
   useEffect(() => {
@@ -28,23 +24,27 @@ const Home = ({ theme, themeToggler }) => {
 
   return (
     <>
-      <NavBar themeToggler={themeToggler} theme={theme} />
-      <Header id="home">
+      <div id="home" />
+      <NavBar />
+      <Header>
         <HeaderImg
-          data-aos="fade-right"
-          data-aos-delay="500"
-          data-aos-duration="1000"
+          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -100 }}
+          transition={{ duration: 1.5 }}
         >
-          {theme === "light" ? (
-            <img src={lol} className="me-home" alt="me-img" />
-          ) : (
-            <img src={lolDark} className="me-home" alt="me-img" />
-          )}
+          <img src={lol} className="me-home" alt="me-img" />
         </HeaderImg>
         <TextHeader
-          data-aos="fade-down"
-          data-aos-delay="1200"
-          data-aos-duration="1000"
+          className="tex-color__primary"
+          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: 100 }}
+          transition={{
+            duration: 1,
+            delay: 1.5,
+            type: "spring",
+            damping: 15,
+            mass: 4,
+          }}
         >
           <h2>
             <FormattedMessage
@@ -69,7 +69,7 @@ const Home = ({ theme, themeToggler }) => {
             <span className="javascript-color">JavaScript</span>{" "}
             <FormattedMessage id="app.and" defaultMessage="y" />{" "}
             <span className="react-color">
-              ReactJS{" "}
+              ReactJS
               <motion.img
                 animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
@@ -79,38 +79,39 @@ const Home = ({ theme, themeToggler }) => {
             </span>
           </p>
           <div className="icons-header">
-            <motion.img
-              onClick={() =>
-                window.open("https://github.com/WinFlix", "_blank")
-              }
-              whileHover={{ rotate: [0, 5, 15, -15, 5, 0] }}
-              whileTap={{ scale: 3 }}
-              transition={{ duration: 0.5 }}
-              src={theme === "light" ? github : githubw}
-              alt="github-icon"
-            />
-            <motion.img
-              onClick={() =>
-                window.open(
-                  "https://www.linkedin.com/in/mozzesdev/",
-                  "_blank"
-                )
-              }
-              whileHover={{ rotate: [0, 5, 15, -15, 5, 0] }}
-              whileTap={{ scale: 3 }}
-              transition={{ duration: 0.5 }}
-              src={theme === "light" ? linkdIcon : linkdnw}
-              alt="linkedin-icon"
-            />
+            <IconWrapper>
+              <Github
+                onClick={() =>
+                  window.open("https://github.com/WinFlix", "_blank")
+                }
+                width={30}
+                whileHover={{ rotate: [0, 5, 15, -15, 5, 0] }}
+                whileTap={{ scale: 3 }}
+                transition={{ duration: 0.5 }}
+              />
+            </IconWrapper>
+            <IconWrapper>
+              <Linkd
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/mozzesdev/",
+                    "_blank"
+                  )
+                }
+                width={30}
+                whileHover={{ rotate: [0, 5, 15, -15, 5, 0] }}
+                whileTap={{ scale: 3 }}
+                transition={{ duration: 0.5 }}
+              />
+            </IconWrapper>
             <p className="date-now"> - {dateNow.toLocaleDateString()}</p>
           </div>
         </TextHeader>
       </Header>
-      <About theme={theme} />
-      <Services theme={theme} />
-      <Projects theme={theme} />
-      <Contact theme={theme} />
-
+      <About />
+      <Projects />
+      <Services />
+      <Contact />
       <Footer />
     </>
   );
@@ -120,20 +121,18 @@ export default Home;
 
 const Header = styled.header`
   display: flex;
-  width: 90%;
-  margin: 80px auto 0;
+  width: 100%;
+  min-height: calc(100vh - 63px);
+  background-color: ${({ theme }) => theme.body};
   align-items: center;
   justify-content: center;
-  @media (max-width: 800px) {
-    justify-content: space-between;
-  }
   @media (max-width: 582px) {
     flex-direction: column;
-    margin: 40px auto 0;
+    min-height: calc(100vh - 52px);
   }
 `;
 
-const TextHeader = styled.div`
+const TextHeader = styled(motion.div)`
   position: relative;
   margin-bottom: 80px;
   margin-left: 50px;
@@ -152,10 +151,8 @@ const TextHeader = styled.div`
   .icons-header {
     padding: 10px 0 0;
     display: flex;
-    img {
-      width: 30px;
-      cursor: pointer;
-      height: 30px;
+    svg {
+      fill: ${({theme}) => theme.modeColor};
     }
     p {
       margin-left: 5px;
@@ -184,7 +181,8 @@ const TextHeader = styled.div`
   }
 `;
 
-const HeaderImg = styled.div`
+const HeaderImg = styled(motion.div)`
+  position: relative;
   img {
     width: 400px;
     object-fit: cover;
@@ -201,5 +199,20 @@ const HeaderImg = styled.div`
       width: 200px;
       margin-top: 20px;
     }
+  }
+
+  ::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+      rgb(0, 0, 0, 0),
+      rgb(0, 0, 0, 0),
+      ${({ theme }) => theme.body},
+      ${({ theme }) => theme.body} 150%
+    );
   }
 `;

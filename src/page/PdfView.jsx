@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
-import pdf from '../assets/CV.pdf'
+import pdf from "../assets/CV.pdf";
 
 const PdfView = () => {
-
   useEffect(() => {
-    if(typeof window.orientation !== 'undefined'){
-      document.getElementById('downloadPdf').click()
-      window.close()
+    if (typeof window.orientation !== "undefined") {
+      document.getElementById("downloadPdf").click();
+      window.close();
     }
-  }, [])
-  
+  }, []);
 
   return (
     <>
-      <div style={{width: '100%', height: '100%', position: 'absolute'}}>
-       <object data={pdf} type="application/pdf" width='100%' height='100%'>
-         <a href={pdf} download='MoisesZambrano-CV.pdf' id='downloadPdf'>Descargar Pdf</a>
-       </object>
+      <div style={{ width: "100%", height: "100%", position: "absolute" }}>
+        <object data={pdf} type="application/pdf" width="100%" height="100%">
+          <a href={pdf} download="MoisesZambrano-CV.pdf" id="downloadPdf">
+            Descargar Pdf
+          </a>
+        </object>
       </div>
     </>
   );

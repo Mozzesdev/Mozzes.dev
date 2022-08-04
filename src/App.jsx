@@ -1,34 +1,15 @@
 import { Route, Routes, Navigate } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
 import Home from "./page/Home";
-import { useState, useEffect } from "react";
-import { darkTheme, lightTheme, GlobalStyles } from "./themes";
+import { useEffect } from "react";
 import { IntlProvider } from "react-intl";
 import { useLang } from "./context/langContext";
+import { useTheme } from "./context/themeContext";
 import PdfView from "./page/PdfView";
+import ThemeProviderApp from "./themes";
 
 const App = () => {
-  const [theme, setTheme] = useState("light");
-
   const { messages, locale } = useLang();
-
-  const themeToggler = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
-    if (theme === "light") {
-      localStorage.setItem("mode-window", "dark");
-    } else {
-      localStorage.setItem("mode-window", "light");
-    }
-  };
-
-
-  const modeWindow = () => {
-    if (localStorage.getItem("mode-window") === "dark") {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  };
+  const { modeWindow } = useTheme();
 
   useEffect(() => {
     modeWindow();
@@ -37,14 +18,16 @@ const App = () => {
   return (
     <>
       <IntlProvider locale={locale} messages={messages}>
-        <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-          <GlobalStyles />
+        <ThemeProviderApp>
           <Routes>
-            <Route path="/" element={<Home themeToggler={themeToggler} theme={theme} />} />
+            <Route
+              path="/"
+              element={<Home />}
+            />
             <Route path="/cv" element={<PdfView />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
-        </ThemeProvider>
+        </ThemeProviderApp>
       </IntlProvider>
     </>
   );
